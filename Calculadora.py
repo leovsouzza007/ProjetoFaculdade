@@ -67,6 +67,20 @@ def limpar_tela():
 for texto, comando, x, y, largura in botoes:
     bg_cor = co4 if texto in ["*", "/", "-", "+", "="] else co3
     fg_cor = co1 if texto in ["*", "/", "-", "+", "="] else fundo
+      Button(
+        frame_quadros,
+        text=texto,
+        width=largura,
+        height=2,
+        command=comando,
+        bg=bg_cor,
+        fg=fg_cor,
+        font=('Ivy 13 bold'),
+        relief=RAISED,
+        overrelief=RIDGE
+    ).place(x=x, y=y)
+
+janela.mainloop()
 
 
 
