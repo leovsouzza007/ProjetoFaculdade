@@ -20,7 +20,7 @@ todos_valores = ""
 valor_texto = StringVar()
 
 app_tela = Label(frame_tela, textvariable=valor_texto, width=16, height=2, padx=7, relief="flat",
-                 anchor="e", bd=0, justify=RIGHT, font=('Ivy 18'), bg='#37474F', fg=co1)
+ anchor="e", bd=0, justify=RIGHT, font=('Ivy 18'), bg='#37474F', fg=co1)
 app_tela.place(x=0, y=0)
 
 def entrar_valor(event):
@@ -42,8 +42,8 @@ def limpar_tela():
     global todos_valores
     todos_valores = ""
     valor_texto.set("")
-  
-  botoes = [
+
+botoes = [
     ("C", limpar_tela, 0, 0, 11),
     ("%", lambda: entrar_valor("%"), 118, 0, 5),
     ("/", lambda: entrar_valor("/"), 177, 0, 5),
@@ -67,7 +67,8 @@ def limpar_tela():
 for texto, comando, x, y, largura in botoes:
     bg_cor = co4 if texto in ["*", "/", "-", "+", "="] else co3
     fg_cor = co1 if texto in ["*", "/", "-", "+", "="] else fundo
-      Button(
+
+    Button(
         frame_quadros,
         text=texto,
         width=largura,
@@ -79,10 +80,6 @@ for texto, comando, x, y, largura in botoes:
         relief=RAISED,
         overrelief=RIDGE
     ).place(x=x, y=y)
-
-janela.mainloop()
-
-
 
 janela.mainloop()
 
